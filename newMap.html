@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자바스크립트</title>
+  </head>
+  <body>
+    <script>
+      const arrDup = [
+        { name: "라이언", company: "kakao" },
+        { name: "라이언", company: "kakao" },
+        { name: "라이언", company: "kakao" },
+        { name: "브라운", company: "naver" },
+        { name: "프로도", company: "kakao" },
+        { name: "펭수", company: "ebs" },
+        { name: "뽀로로", company: "ebs" },
+        { name: "뽀로로", company: "ebs" },
+        { name: "케로로", company: "ebs" },
+        { name: "루피", company: "ebs" },
+        { name: "루피", company: "kbs" },
+      ];
+      console.log(arrDup);
+
+      const map = new Map(); // 맵
+      console.log(map);
+
+      for (const character of arrDup) {
+        console.log(character); // 오브젝트
+        map.set(JSON.stringify(character), character); // name, company 가 모두 같은 객체 요소는 제외한 맵 생성
+      }
+
+      const arrUnique = [...map.values()];
+      console.log(arrUnique); // {name: '라이언', company: 'kakao'} // {name: '브라운', company: 'naver'} // {name: '프로도', company: 'kakao'} // {name: '펭수', company: 'ebs'} // {name: '뽀로로', company: 'ebs'} // {name: '케로로', company: 'ebs'} // {name: '루피', company: 'ebs'} // {name: '루피', company: 'kbs'}
+    </script>
+  </body>
+</html>
